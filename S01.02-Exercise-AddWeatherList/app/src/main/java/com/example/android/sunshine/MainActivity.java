@@ -17,10 +17,12 @@ package com.example.android.sunshine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     // TODO (1) Create a field to store the weather display TextView
+    TextView weatherDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forecast);
 
         // TODO (2) Use findViewById to get a reference to the weather display TextView
+        weatherDisplay = (TextView) findViewById(R.id.tv_weather_data);
 
         // TODO (3) Create an array of Strings that contain fake weather data
+        String [] weatherDataArray = {"Temperature: 80 deg"
+                                        ,"Humidity: 40 pct"
+                                        ,"Conditions: Partly Cloudy"
+                                        ,"Pressure: Steady"
+                                        ,"Data1: keeping going to test scroll"
+                                        ,"Data2: keeping going to test scroll"
+                                        ,"Data3: keeping going to test scroll"
+                                        ,"Data4: keeping going to test scroll"
+                                        ,"Data5: keeping going to test scroll"
+                                        ,"Data6: keeping going to test scroll"
+                                        ,"Data7: keeping going to test scroll"
+                                        ,"Data8: keeping going to test scroll"
+                                        ,"Data9: keeping going to test scroll"
+                                        ,"Data10: keeping going to test scroll"
+                                        ,"Data11: keeping going to test scroll"
+                                        ,"Data12: keeping going to test scroll"
+                                        ,"Data13: keeping going to test scroll"
+        };
 
         // TODO (4) Append each String from the fake weather data array to the TextView
+        for (String weatherData : weatherDataArray){
+            weatherDisplay.append(weatherData + "\n\n");
+        }
     }
 }
